@@ -5,10 +5,12 @@ void main(string[] args)
 	auto dir = getcwd();
 	if (args.length == 1) {
 		lFiles(dir);
-	} else if (args.length > 1) {
-		lFiles(args[1]);
-	}
+	} else if ((args.length > 1) && (std.file.exists(args[1]))) {
 
+		lFiles(args[1]);
+	} else {
+		writefln("ls: cannot access %s: no such directory", args[1]);
+	}
 }
 
 // Option 1
