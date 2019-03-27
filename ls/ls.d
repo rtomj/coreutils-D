@@ -2,8 +2,9 @@ import std.stdio, std.file, std.algorithm, std.array, std.path;
 
 void main(string[] args)
 {
+	auto dir = getcwd();
 	if (args.length == 1) {
-		lFiles(".");
+		lFiles(dir);
 	} else if (args.length > 1) {
 		lFiles(args[1]);
 	}
